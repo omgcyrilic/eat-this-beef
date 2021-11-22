@@ -1,24 +1,31 @@
-import PostPreview from '../components/post-preview'
+import Restaurant from './restaurant'
 
 export default function MoreStories({ posts }) {
   return (
-    <section>
-      <h2 className="mb-8 text-6xl md:text-7xl font-bold tracking-tighter leading-tight">
-        More Stories
-      </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 md:col-gap-16 lg:col-gap-32 row-gap-20 md:row-gap-32 mb-32">
+    <>
+      <h1 className={'wow fadeInDown'}>MORE BEEF</h1>
+      <section className={'restaurant-list'}>
         {posts.map(({ node }) => (
-          <PostPreview
-            key={node.slug}
-            title={node.title}
-            coverImage={node.featuredImage?.node}
+          <Restaurant
+            addresscity={node.addresscity}
+            addressstate={node.addressstate}
+            addressstreet={node.addressstreet}
+            closed={node.closed}
+            content={node.content}
             date={node.date}
-            author={node.author?.node}
+            id={node.id}
+            img={node.img}
+            imgbonus={node.imgbonus}
+            imgexterior={node.imgexterior}
+            imgthumb={node.imgthumb}
+            key={node.id}
+            rank={node.rank}
+            section={node.section}
             slug={node.slug}
-            excerpt={node.excerpt}
+            title={node.title}
           />
         ))}
-      </div>
-    </section>
+      </section>
+    </>
   )
 }

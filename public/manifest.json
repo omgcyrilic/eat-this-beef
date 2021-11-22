@@ -1,0 +1,20 @@
+{
+  "name": "Eat This Beef",
+  "short_name": "etb",
+  "icons": [
+    {
+      "src": "./img/favicon-192.png",
+      "type": "image/png",      
+      "sizes": "192x192"
+    },
+    {
+      "src": "./img/favicon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "",
+  "display": "standalone",
+  "background_color": "#011627",
+  "theme_color": "#ff9f1c"
+}

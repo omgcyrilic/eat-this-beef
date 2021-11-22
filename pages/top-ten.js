@@ -1,20 +1,20 @@
 import Container from '../components/container'
 import Restaurants from '../components/restaurants'
-import Intro from '../components/intro'
 import Layout from '../components/layout'
 import Logo from '../components/logo'
 import Meta from '../components/meta'
-import { getAllPostsForHome } from '../lib/api'
+import { getTopTen } from '../lib/api'
 
 export default function Index({ allPosts: { edges } }) {
-  const restaurants = edges.slice(1)
+  const restaurants = edges
 
   return (
     <>
       <Layout>
-        <Meta title={'Eat This Beef, brah.'} />
+        <Meta title={'The Top Ten - Eat This Beef, brah.'} />
         <Logo />
-        <Intro />
+        <h1 className={'wow fadeInDown'}>THE TOP TEN</h1>
+        <h3 className={'wow fadeInDown'}>The best of the best in Dallas, Texas</h3>
         <Container>
           {restaurants.length > 0 && <Restaurants posts={restaurants} />}
         </Container>
@@ -24,7 +24,7 @@ export default function Index({ allPosts: { edges } }) {
 }
 
 export async function getStaticProps({ preview = false }) {
-  const allPosts = await getAllPostsForHome(preview)
+  const allPosts = await getTopTen(preview)
   return {
     props: { allPosts, preview },
   }

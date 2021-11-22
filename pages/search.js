@@ -1,12 +1,11 @@
 import Container from '../components/container'
 import Restaurants from '../components/restaurants'
-import Intro from '../components/intro'
-import Layout from '../components/layout'
 import Logo from '../components/logo'
+import Layout from '../components/layout'
 import Meta from '../components/meta'
 import { getAllPostsForHome } from '../lib/api'
 
-export default function Index({ allPosts: { edges } }) {
+export default function Search({ allPosts: { edges } }) {
   const restaurants = edges.slice(1)
 
   return (
@@ -14,9 +13,13 @@ export default function Index({ allPosts: { edges } }) {
       <Layout>
         <Meta title={'Eat This Beef, brah.'} />
         <Logo />
-        <Intro />
         <Container>
-          {restaurants.length > 0 && <Restaurants posts={restaurants} />}
+          <h4>
+            ... aint done yet
+          </h4>
+          <div>
+            &nbsp;
+          </div>
         </Container>
       </Layout>
     </>
