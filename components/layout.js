@@ -8,15 +8,14 @@ import React from 'react'
 import $ from 'jquery'
 
 const isServer = typeof window === 'undefined'
+
 if (!isServer) {
   window.WOW = require('wowjs')
   window.wow = new WOW.WOW({
     live: false
   })
   window.wow.init()
-}
 
-if (!isServer) {
   // begin shitty ass jQuery
   document.addEventListener('DOMContentLoaded', function() {
     let isActive = false
@@ -29,6 +28,10 @@ if (!isServer) {
       else {
         collapseMenu()
       }
+    })
+
+    $('.menu__item').on('click', function() {
+      collapseMenu()
     })
 
     const expandMenu = () => {
@@ -65,7 +68,6 @@ if (!isServer) {
       top = !1)
     })
 
-    collapseMenu()
     // $('body').attr('oncontextmenu', 'return false')
   })
 
