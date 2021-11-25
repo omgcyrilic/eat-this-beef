@@ -1,5 +1,8 @@
 {
-  "extends": "next/core-web-vitals",
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:prettier/recommended"
+  ],
   "rules": {
     "eol-last": ["error", "always"],
     "no-multi-spaces": "error", 
@@ -10,6 +13,6 @@
     "indent": ["error", 2],
     "linebreak-style": ["error","unix"],
     "quotes": ["error","single"],
-    "semi": ["error","never"]
+    "semi": ["error","always"]
   }
 }
