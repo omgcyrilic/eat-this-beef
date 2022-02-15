@@ -3,22 +3,22 @@ export const buildImageaArray = (img, imgbonus, imgexterior, restaurant) => {
 
   if (img) {
     images.push({
-      'src': `https://images.eatthisbeef.com/${img}`,
-      'title': restaurant
+      src: `https://images.eatthisbeef.com/${img}`,
+      title: restaurant,
     })
   }
 
   if (imgbonus) {
     images.push({
-      'src': `https://images.eatthisbeef.com/${imgbonus}`,
-      'title': restaurant
+      src: `https://images.eatthisbeef.com/${imgbonus}`,
+      title: restaurant,
     })
   }
 
   if (imgexterior) {
     images.push({
-      'src': `https://images.eatthisbeef.com/${imgexterior}`,
-      'title': restaurant
+      src: `https://images.eatthisbeef.com/${imgexterior}`,
+      title: restaurant,
     })
   }
 
@@ -29,7 +29,7 @@ export const getCategoryTag = (category, rank) => {
   if (category != null && rank != null) {
     if (category === 1 && rank > 0) {
       if (rank <= 99) {
-        rank = ('0'+rank).slice(-2)
+        rank = ('0' + rank).slice(-2)
       }
       return 'top-' + rank
     }
@@ -41,8 +41,7 @@ export const getCategoryTag = (category, rank) => {
     }
     if (category === 4) {
       return 'placeholder'
-    }
-    else {
+    } else {
       return 'error'
     }
   }

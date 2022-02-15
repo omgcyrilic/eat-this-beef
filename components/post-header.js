@@ -8,9 +8,5 @@ export default function PostHeader({
   author,
   categories,
 }) {
-  return (
-    <>
-
-    </>
-  )
+  return <></>
 }

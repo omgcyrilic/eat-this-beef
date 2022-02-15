@@ -9,7 +9,7 @@ export default function LightboxComponent({
   img,
   imgbonus,
   imgexterior,
-  restaurant
+  restaurant,
 }) {
   const [photoIndex, setPhotoIndex] = useState(0)
   const images = buildImageaArray(img, imgbonus, imgexterior, restaurant)
@@ -25,9 +25,7 @@ export default function LightboxComponent({
           animationOnKeyInput={true}
           onCloseRequest={() => setIsOpen(false)}
           onMovePrevRequest={() =>
-            setPhotoIndex(
-              (photoIndex + images.length - 1) % images.length
-            )
+            setPhotoIndex((photoIndex + images.length - 1) % images.length)
           }
           onMoveNextRequest={() =>
             setPhotoIndex((photoIndex + 1) % images.length)

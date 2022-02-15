@@ -12,39 +12,42 @@ const isServer = typeof window === 'undefined'
 if (!isServer) {
   window.WOW = require('wowjs')
   window.wow = new WOW.WOW({
-    live: false
+    live: false,
   })
   window.wow.init()
 
   // begin shitty ass jQuery
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
     let isActive = false
     const $hamburger = $('.hamburger')
 
-    $($hamburger).on('click', function() {
+    $($hamburger).on('click', function () {
       if (isActive === false) {
         expandMenu()
-      }
-      else {
+      } else {
         collapseMenu()
       }
     })
 
-    $('.menu__item').on('click', function() {
+    $('.menu__item').on('click', function () {
       collapseMenu()
     })
 
     const expandMenu = () => {
       isActive = true
       $hamburger.addClass('is-active')
-      $('html, body').animate({
-        scrollTop: 0
-      }, 0, function() {
-        $('html, body').addClass('blocked'),
-        $('aside').fadeIn('200', function() {
-          $('.menu').addClass('expanded')
-        })
-      })
+      $('html, body').animate(
+        {
+          scrollTop: 0,
+        },
+        0,
+        function () {
+          $('html, body').addClass('blocked'),
+            $('aside').fadeIn('200', function () {
+              $('.menu').addClass('expanded')
+            })
+        }
+      )
     }
 
     const collapseMenu = () => {
@@ -56,16 +59,19 @@ if (!isServer) {
     }
 
     let top = !1
-    $(document).on('scroll', function() {
-      $(window).scrollTop() > 650 ? top || ($('nav').hide().stop().fadeIn(300).css({
-        position: 'fixed',
-        top: '15px',
-      }),
-      top = !0) : ($('nav').css({
-        position: 'absolute',
-        top: '0'
-      }),
-      top = !1)
+    $(document).on('scroll', function () {
+      $(window).scrollTop() > 650
+        ? top ||
+          ($('nav').hide().stop().fadeIn(300).css({
+            position: 'fixed',
+            top: '15px',
+          }),
+          (top = !0))
+        : ($('nav').css({
+            position: 'absolute',
+            top: '0',
+          }),
+          (top = !1))
     })
 
     // $('body').attr('oncontextmenu', 'return false')
