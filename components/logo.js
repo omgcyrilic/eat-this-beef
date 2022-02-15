@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from 'next/image';
 
 export default function Intro() {
   return (
@@ -20,5 +20,5 @@ export default function Intro() {
         />
       </div>
     </section>
-  )
+  );
 }

@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-import Lightbox from 'react-image-lightbox'
-import 'react-image-lightbox/style.css'
-import { buildImageaArray } from './helpers'
+import React, { useState } from 'react';
+import Lightbox from 'react-image-lightbox';
+import 'react-image-lightbox/style.css';
+import { buildImageaArray } from './helpers';
 
 export default function LightboxComponent({
   isOpen,
@@ -11,8 +11,8 @@ export default function LightboxComponent({
   imgexterior,
   restaurant,
 }) {
-  const [photoIndex, setPhotoIndex] = useState(0)
-  const images = buildImageaArray(img, imgbonus, imgexterior, restaurant)
+  const [photoIndex, setPhotoIndex] = useState(0);
+  const images = buildImageaArray(img, imgbonus, imgexterior, restaurant);
 
   return (
     <>
@@ -33,5 +33,5 @@ export default function LightboxComponent({
         />
       )}
     </>
-  )
+  );
 }

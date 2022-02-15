@@ -1,5 +1,5 @@
-import Date from '../components/date'
-import PostTitle from '../components/post-title'
+import Date from '../components/date';
+import PostTitle from '../components/post-title';
 
 export default function PostHeader({
   title,
@@ -8,5 +8,5 @@ export default function PostHeader({
   author,
   categories,
 }) {
-  return <></>
+  return <></>;
 }

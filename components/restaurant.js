@@ -1,9 +1,9 @@
-import { useState } from 'react'
-import LazyLoad from 'react-lazyload'
-import Link from 'next/link'
-import Image from 'next/image'
-import Lightbox from '../components/lightbox'
-import { getCategoryTag, getDateDisplay } from './helpers'
+import { useState } from 'react';
+import LazyLoad from 'react-lazyload';
+import Link from 'next/link';
+import Image from 'next/image';
+import Lightbox from '../components/lightbox';
+import { getCategoryTag, getDateDisplay } from './helpers';
 
 export default function Restaurant({
   addresscity,
@@ -23,7 +23,7 @@ export default function Restaurant({
   restaurant,
   title,
 }) {
-  const [isOpen, setIsOpen] = useState()
+  const [isOpen, setIsOpen] = useState();
 
   return (
     <>
@@ -87,5 +87,5 @@ export default function Restaurant({
         <div className={'date'}>Masticated in: {getDateDisplay(date)}</div>
       </section>
     </>
-  )
+  );
 }

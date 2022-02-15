@@ -7,5 +7,5 @@ export default function Intro() {
       </h1>
       <h4 className={'wow fadeInDown'}>BURGERS THAT JUST MET OUR BELLIES</h4>
     </section>
-  )
+  );
 }

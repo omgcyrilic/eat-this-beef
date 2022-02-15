@@ -1,5 +1,5 @@
-import Date from '../components/date'
-import Link from 'next/link'
+import Date from '../components/date';
+import Link from 'next/link';
 
 export default function PostPreview({
   title,
@@ -27,5 +27,5 @@ export default function PostPreview({
         dangerouslySetInnerHTML={{ __html: excerpt }}
       />
     </div>
-  )
+  );
 }

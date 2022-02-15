@@ -1,4 +1,4 @@
-import Restaurant from './restaurant'
+import Restaurant from './restaurant';
 
 export default function MoreStories({ posts }) {
   return (
@@ -27,5 +27,5 @@ export default function MoreStories({ posts }) {
         ))}
       </section>
     </>
-  )
+  );
 }

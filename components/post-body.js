@@ -3,5 +3,5 @@ export default function PostBody({ content }) {
     <div className="max-w-2xl mx-auto">
       <div dangerouslySetInnerHTML={{ __html: content }} />
     </div>
-  )
+  );
 }

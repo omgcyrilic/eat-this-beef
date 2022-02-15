@@ -10,5 +10,5 @@ export default function Footer() {
         <a href="mailto:hello@eatthisbeef.com">hello@eatthisbeef.com</a>
       </div>
     </footer>
-  )
+  );
 }

@@ -1,4 +1,4 @@
-import Restaurant from './restaurant'
+import Restaurant from './restaurant';
 
 export default function Restaurants({ posts }) {
   return (
@@ -24,5 +24,5 @@ export default function Restaurants({ posts }) {
         />
       ))}
     </section>
-  )
+  );
 }

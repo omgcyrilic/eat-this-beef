@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
-import Link from 'next/link'
+import React, { useState } from 'react';
+import Link from 'next/link';
 
 export default function Menu(showMenu) {
   const onMenuClicked = () => {
-    console.log('click')
-  }
+    console.log('click');
+  };
 
   return (
     <aside>
@@ -34,5 +34,5 @@ export default function Menu(showMenu) {
         </Link>
       </div>
     </aside>
-  )
+  );
 }

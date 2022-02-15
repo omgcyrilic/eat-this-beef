@@ -1,15 +1,15 @@
-import React, { useState } from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
-import Menu from './menu'
+import React, { useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import Menu from './menu';
 
 export default function Nav() {
-  const [showMenu, setShowMenu] = useState(false)
+  const [showMenu, setShowMenu] = useState(false);
 
   const onMenuClicked = () => {
-    console.log('click')
-    setShowMenu(true)
-  }
+    console.log('click');
+    setShowMenu(true);
+  };
 
   return (
     <>
@@ -37,5 +37,5 @@ export default function Nav() {
       </nav>
       <Menu showMenu={showMenu} />
     </>
-  )
+  );
 }

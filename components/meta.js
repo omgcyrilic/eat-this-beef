@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import Head from 'next/head';
 
 export default function Meta({ title, image }) {
   return (
@@ -43,5 +43,5 @@ export default function Meta({ title, image }) {
         type="image/x-icon"
       />
     </Head>
-  )
+  );
 }

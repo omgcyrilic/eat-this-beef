@@ -1,41 +1,41 @@
-import ReactGA from 'react-ga'
-import Router from 'next/router'
-import NProgress from 'nprogress'
-import Menu from '../components/menu'
-import Nav from '../components/nav'
-import Footer from '../components/footer'
-import React from 'react'
-import $ from 'jquery'
+import ReactGA from 'react-ga';
+import Router from 'next/router';
+import NProgress from 'nprogress';
+import Menu from '../components/menu';
+import Nav from '../components/nav';
+import Footer from '../components/footer';
+import React from 'react';
+import $ from 'jquery';
 
-const isServer = typeof window === 'undefined'
+const isServer = typeof window === 'undefined';
 
 if (!isServer) {
-  window.WOW = require('wowjs')
+  window.WOW = require('wowjs');
   window.wow = new WOW.WOW({
     live: false,
-  })
-  window.wow.init()
+  });
+  window.wow.init();
 
   // begin shitty ass jQuery
   document.addEventListener('DOMContentLoaded', function () {
-    let isActive = false
-    const $hamburger = $('.hamburger')
+    let isActive = false;
+    const $hamburger = $('.hamburger');
 
     $($hamburger).on('click', function () {
       if (isActive === false) {
-        expandMenu()
+        expandMenu();
       } else {
-        collapseMenu()
+        collapseMenu();
       }
-    })
+    });
 
     $('.menu__item').on('click', function () {
-      collapseMenu()
-    })
+      collapseMenu();
+    });
 
     const expandMenu = () => {
-      isActive = true
-      $hamburger.addClass('is-active')
+      isActive = true;
+      $hamburger.addClass('is-active');
       $('html, body').animate(
         {
           scrollTop: 0,
@@ -44,21 +44,21 @@ if (!isServer) {
         function () {
           $('html, body').addClass('blocked'),
             $('aside').fadeIn('200', function () {
-              $('.menu').addClass('expanded')
-            })
+              $('.menu').addClass('expanded');
+            });
         }
-      )
-    }
+      );
+    };
 
     const collapseMenu = () => {
-      isActive = false
-      $hamburger.removeClass('is-active')
-      $('html, body').removeClass('blocked')
-      $('.menu').removeClass('expanded')
-      $('aside').fadeOut('200')
-    }
+      isActive = false;
+      $hamburger.removeClass('is-active');
+      $('html, body').removeClass('blocked');
+      $('.menu').removeClass('expanded');
+      $('aside').fadeOut('200');
+    };
 
-    let top = !1
+    let top = !1;
     $(document).on('scroll', function () {
       $(window).scrollTop() > 650
         ? top ||
@@ -71,22 +71,22 @@ if (!isServer) {
             position: 'absolute',
             top: '0',
           }),
-          (top = !1))
-    })
+          (top = !1));
+    });
 
     // $('body').attr('oncontextmenu', 'return false')
-  })
+  });
 
   // google analytics
-  ReactGA.initialize('UA-3241810-3')
-  ReactGA.pageview(window.location.pathname + window.location.search)
+  ReactGA.initialize('UA-3241810-3');
+  ReactGA.pageview(window.location.pathname + window.location.search);
 }
 
 Router.onRouteChangeStart = () => {
-  NProgress.start()
-}
-Router.onRouteChangeComplete = () => NProgress.done()
-Router.onRouteChangeError = () => NProgress.done()
+  NProgress.start();
+};
+Router.onRouteChangeComplete = () => NProgress.done();
+Router.onRouteChangeError = () => NProgress.done();
 
 export default function Layout({ children }) {
   return (
@@ -96,5 +96,5 @@ export default function Layout({ children }) {
       <main>{children}</main>
       <Footer />
     </>
-  )
+  );
 }
